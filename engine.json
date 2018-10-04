@@ -1,0 +1,8 @@
+{
+  "name": "bandit",
+  "description": "Python AST-based static analyzer [https://github.com/openstack/bandit]",
+  "maintainer": {
+    "name": "Benji Visser",
+    "email": "benny@noqcks.io"
+  }
+}

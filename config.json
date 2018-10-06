@@ -1,7 +1,0 @@
-{
-  "include_paths":[
-    ".gitignore",
-    "app/",
-    "test/"
-  ]
-}

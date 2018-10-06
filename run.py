@@ -53,8 +53,8 @@ if len(include_paths) > 0:
   for result in output["results"]:
     dict = {
       "type": "issue",
-      "check_name": result["test_id"] + ": " + result["issue_text"],
-      "description": result["more_info"],
+      "check_name": result["test_id"],
+      "description": result["issue_text"],
       "categories": ["Security"],
       "severity": severity(result["issue_severity"]),
       "fingerprint": result["test_id"],

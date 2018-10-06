@@ -1,8 +1,47 @@
 # Code Climate Bandit Engine
 
-TODO
+Code Climate Engine to run [Bandit](https://github.com/PyCQA/bandit).
+
+Bandit is a tool designed to find common security issues in Python code.
+
+## Installation
+
+```
+git clone https://github.com/noqcks/codeclimate-bandit
+cd codeclimate-hlint
+make release
+```
+
+## Usage
+
+.codeclimate.yml
+```
+engines:
+  bandit:
+    enabled: true
+    config:
+      python_version: 3
+```
+
+**NOTE**: You must set the correct python_version or you will fail to receive accurate Bandit results.
+
+```
+codeclimate analyze
+```
 
 ## Configuration
 
-- .codeclimate.yaml
-- support .bandit.yaml files
+The engine supports the native config file for Bandit. You can select the specific test plugins to run and override default Bandit configuration using this file. More information on the config file can be found in the [Bandit documentation](https://docs.openstack.org/bandit/latest/config.html).
+
+A `.bandit.yaml` included at the root of your project will be included during engine run.
+
+Example `.bandit.yaml`:
+
+```
+skips: ['B101', 'B601', 'B404']
+```
+
+
+## TODO
+
+- support different locations of .bandit.yaml

@@ -1,8 +1,11 @@
 {
   "name": "bandit",
-  "description": "Python AST-based static analyzer [https://github.com/openstack/bandit]",
+  "description": "Bandit is a tool designed to find common security issues in Python code.",
   "maintainer": {
     "name": "Benji Visser",
     "email": "benny@noqcks.io"
-  }
+  },
+  "languages": ["Python"],
+  "version": "0.1.0",
+  "spec_version": "0.3.1"
 }

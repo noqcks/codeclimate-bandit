@@ -23,7 +23,7 @@ engines:
       python_version: 3
 ```
 
-**NOTE**: You must set the correct python_version or you will fail to receive accurate Bandit results.
+**NOTE**: You must set the correct python_version or you will fail to receive accurate Bandit results. The version can be `3` or `2`. 
 
 ```
 codeclimate analyze

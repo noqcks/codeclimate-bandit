@@ -11,7 +11,6 @@ import subprocess
 
 binstub = "bandit3"
 include_paths = ["."]
-exclude_paths = []
 
 # severity converts the severity of a bandit issue
 # to the severity accepted by CodeClimate

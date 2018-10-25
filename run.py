@@ -23,21 +23,22 @@ def severity(sev):
     return "info"
 
 if os.path.exists("/config.json"):
-    contents = open("/config.json").read()
-    config = json.loads(contents)
+  contents = open("/config.json").read()
+  config = json.loads(contents)
 
-    # set python version
+  # set python version
+  if 'config' in config:
     if config["config"].get("python_version"):
-        version = config["config"].get("python_version")
-        if version == "2" or version == 2:
-            binstub = "bandit2"
-        elif version != "3" and version != 3:
-            sys.exit("Invalid python_version; must be either 2 or 3")
+      version = config["config"].get("python_version")
+      if version == "2" or version == 2:
+        binstub = "bandit2"
+      elif version != "3" and version != 3:
+        sys.exit("Invalid python_version; must be either 2 or 3")
 
-    # set included paths
-    if config.get("include_paths"):
-      include_paths = config.get("include_paths", ["."])
-      include_paths = [shlex.quote(path) for path in include_paths if os.path.  isdir(path) or path.endswith(".py")]
+  # set included paths
+  if config.get("include_paths"):
+    include_paths = config.get("include_paths", ["."])
+    include_paths = [shlex.quote(path) for path in include_paths if os.path.  isdir(path) or path.endswith(".py")]
 
 if len(include_paths) > 0:
   included_paths = " ".join(include_paths)

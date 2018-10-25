@@ -23,7 +23,9 @@ plugins:
       python_version: 3
 ```
 
-**NOTE**: You must set the correct python_version or you will fail to receive accurate Bandit results. The version can be `3` or `2`. 
+Python `2` or `3` currently supported.
+
+**NOTE**: If you don't set a Python version, Python 3 will be used by default.
 
 ```
 codeclimate analyze

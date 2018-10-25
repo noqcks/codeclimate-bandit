@@ -8,7 +8,7 @@ Bandit is a tool designed to find common security issues in Python code.
 
 ```
 git clone https://github.com/noqcks/codeclimate-bandit
-cd codeclimate-hlint
+cd codeclimate-bandit
 make release
 ```
 
@@ -16,7 +16,7 @@ make release
 
 .codeclimate.yml
 ```
-engines:
+plugins:
   bandit:
     enabled: true
     config:

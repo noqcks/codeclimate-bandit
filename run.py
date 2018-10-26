@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-import json
-import os.path
-import shlex
-import sys
 
 from ast import literal_eval
 from subprocess import Popen, PIPE, STDOUT
+
+import hashlib
+import json
+import os.path
+import shlex
 import subprocess
+import sys
 
 binstub = "bandit3"
 include_paths = ["."]
@@ -57,7 +59,7 @@ if len(include_paths) > 0:
       "description": result["issue_text"],
       "categories": ["Security"],
       "severity": severity(result["issue_severity"]),
-      "fingerprint": result["test_id"],
+      "fingerprint": hashlib.md5((result["test_id"] + result['filename'] + result['code']).encode('utf-8')).hexdigest(),
       "location": {
         "path": result["filename"],
         "lines": {

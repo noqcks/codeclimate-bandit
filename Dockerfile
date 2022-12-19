@@ -10,7 +10,6 @@ RUN apk add --update \
   python3 py3-pip && \
   pip3 install --upgrade pip && \
   pip3 install -r requirements.txt && \
-  mv /usr/bin/bandit /usr/bin/bandit3 && \
   rm /var/cache/apk/*
 
 COPY . /usr/src/app

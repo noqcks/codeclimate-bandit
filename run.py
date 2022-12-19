@@ -11,7 +11,6 @@ import shlex
 import subprocess
 import sys
 
-binstub = "bandit3"
 include_paths = ["."]
 
 # severity converts the severity of a bandit issue
@@ -28,15 +27,6 @@ if os.path.exists("/config.json"):
   contents = open("/config.json").read()
   config = json.loads(contents)
 
-  # set python version
-  if 'config' in config:
-    if config["config"].get("python_version"):
-      version = config["config"].get("python_version")
-      if version == "2" or version == 2:
-        binstub = "bandit2"
-      elif version != "3" and version != 3:
-        sys.exit("Invalid python_version; must be either 2 or 3")
-
   # set included paths
   if config.get("include_paths"):
     include_paths = config.get("include_paths", ["."])
@@ -44,7 +34,7 @@ if os.path.exists("/config.json"):
 
 if len(include_paths) > 0:
   included_paths = " ".join(include_paths)
-  cmd = f"{binstub} -r {included_paths} -f json"
+  cmd = f"bandit -r {included_paths} -f json"
 
   if os.path.exists("/code/.bandit.yaml"):
     cmd = cmd + f" -c /code/.bandit.yaml"

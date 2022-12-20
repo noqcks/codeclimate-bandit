@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.17.0
 
 LABEL maintainer "Benji Visser <benny@noqcks.io>"
 
@@ -6,14 +6,10 @@ WORKDIR /usr/src/app/
 
 COPY requirements.txt /usr/src/app/
 
-RUN apk --update add \
-  python2 python3 py2-pip && \
-  pip2 install --upgrade pip && \
-  pip2 install -r requirements.txt && \
-  mv /usr/bin/bandit /usr/bin/bandit2 && \
+RUN apk add --update \
+  python3 py3-pip && \
   pip3 install --upgrade pip && \
   pip3 install -r requirements.txt && \
-  mv /usr/bin/bandit /usr/bin/bandit3 && \
   rm /var/cache/apk/*
 
 COPY . /usr/src/app

@@ -19,13 +19,9 @@ make release
 plugins:
   bandit:
     enabled: true
-    config:
-      python_version: 3
 ```
 
-Python `2` or `3` currently supported.
-
-**NOTE**: If you don't set a Python version, Python 3 will be used by default.
+And then run the engine:
 
 ```
 codeclimate analyze
@@ -42,7 +38,6 @@ Example `.bandit.yaml`:
 ```
 skips: ['B101', 'B601', 'B404']
 ```
-
 
 ## TODO
 

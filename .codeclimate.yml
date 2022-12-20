@@ -1,5 +1,3 @@
 plugins:
   bandit:
     enabled: true
-    config:
-      python_version: 3

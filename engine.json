@@ -3,7 +3,7 @@
   "description": "Bandit is a tool designed to find common security issues in Python code.",
   "maintainer": {
     "name": "Benji Visser",
-    "email": "benny@noqcks.io"
+    "email": "benji@093b.org"
   },
   "languages": ["Python"],
   "version": "1.5.1",

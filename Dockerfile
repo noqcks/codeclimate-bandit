@@ -1,6 +1,6 @@
 FROM alpine:3.17.0
 
-LABEL maintainer "Benji Visser <benny@noqcks.io>"
+LABEL maintainer "Benji Visser <benji@093b.org>"
 
 WORKDIR /usr/src/app/
 
